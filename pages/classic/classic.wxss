@@ -1,0 +1,36 @@
+/* pages/classic.wxss */
+.content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.date_container{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 5rpx;
+}
+.date_container l-epsoide{
+  padding-left:10rpx;
+}
+.like-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-right:30rpx;
+}
+.navi{
+  position: absolute;
+  bottom: 100rpx;
+}
+.share-btn {
+  margin-top: 10rpx;
+  margin-left: 10rpx;
+}
+
+.share {
+  width: 40rpx;
+  height: 40rpx;
+}

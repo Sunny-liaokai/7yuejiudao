@@ -1,0 +1,6 @@
+<!--components/classic/navi/idnex.wxml-->
+<view class="container">
+  <image class="leftimg" bind:tap="leftCkilk" src="{{leftDis ? leftSrcDis : leftSrc}}" />
+  <text>{{content}}</text>
+  <image class="rightimg" bind:tap="rightCkilk" src="{{rightDis ? rigthSrcDis : rigthSrc}}" />
+</view>

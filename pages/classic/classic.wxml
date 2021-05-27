@@ -1,0 +1,17 @@
+<!--pages/classic.wxml-->
+<view class="content">
+  <view class="date_container">
+    <l-epsoide index="{{classic.index}}"></l-epsoide>
+    <view class="like-container">
+      <l-like Like="{{!!likeStatus}}" count="{{likeCount}}" bind:change="like_status"></l-like>
+      <l-button open-type="share" class="share-btn">
+        <image class="share" slot="img" src="/pages/book/images/share.png"></image>
+      </l-button>
+    </view>
+  </view>
+  <l-movie hidden="{{classic.type!==100}}" img="{{classic.image}}" text="{{classic.content}}"></l-movie>
+  <l-music wx:if="{{classic.type==200}}" audioSrc="{{classic.url}}" img="{{classic.image}}" text="{{classic.content}}" title="{{classic.title}}"></l-music>
+  <l-essay hidden="{{classic.type!==300}}" img="{{classic.image}}" text="{{classic.content}}"></l-essay>
+  <l-navi class="navi" leftDis="{{NavLeft}}" rightDis="{{NavRight}}" bind:next="onLastOrNext"
+    bind:previous="onLastOrNext" content="{{classic.title}}"></l-navi>
+</view>

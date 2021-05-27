@@ -1,0 +1,45 @@
+/* components/classic/music/index.wxss */
+.classic-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.classic-img{
+  width:442rpx;
+  height: 422rpx;
+  border-radius: 50%;
+  margin-top: 60rpx;
+}
+.play_img{
+  position: relative;
+  width: 120rpx;
+  height: 120rpx;
+  bottom: 270rpx;
+}
+.tag{
+  position: relative;
+  right:310rpx;
+  bottom: 160rpx;
+  width: 46rpx;
+  height: 142rpx;
+}
+.contents{
+  font-size: 36rpx;
+  max-width: 560rpx;
+}
+/* 
+  turn : 定义的动画名称
+  1s : 动画时间
+  linear : 动画以何种运行轨迹完成一个周期
+  infinite :规定动画应该无限次播放
+*/
+
+.run { animation: rotate 5s linear infinite; }
+
+@keyframes rotate {
+  0%{-webkit-transform:rotate(0deg);}
+  25%{-webkit-transform:rotate(90deg);}
+  50%{-webkit-transform:rotate(180deg);}
+  75%{-webkit-transform:rotate(270deg);}
+  100%{-webkit-transform:rotate(360deg);}
+}

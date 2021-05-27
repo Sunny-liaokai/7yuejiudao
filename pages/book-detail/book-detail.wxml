@@ -1,0 +1,79 @@
+<!--pages/book-detail/book-detail.wxml-->
+<wxs src="../../util/filter.wxs" module="util"></wxs>
+<view class="container">
+  <view class="head">
+    <image src="{{book.image}}"></image>
+    <text class='title'>{{book.title}}</text>
+    <text class='author'>{{book.author}}</text>
+  </view>
+  <view class="sub-container">
+    <text class="headline">短评</text>
+    <text class="shadow" wx:if="{{!comments.length}}">还没有短评</text>
+    <view class="comment-container">
+      <block wx:for="{{util.limit(comments,10)}}" wx:key="index">
+        <l-tag tag-class="{{tool.highlight(index)}}" text="{{item.content}}">
+          <text class="num" slot="after">{{'+'+item.nums}}</text>
+        </l-tag>
+      </block>
+    </view>
+  </view>
+  <view class="sub-container">
+    <text class="headline">内容简介</text>
+    <text class="content" decode="{{true}}">{{util.format(book.summary)}}</text>
+  </view>
+  <view class="sub-container">
+    <text class="headline">书本信息</text>
+    <view class="detail-container">
+      <view class="vertical description">
+        <block wx:for="{{booTitle}}" wx:key="index">
+          <text>{{item}}</text>
+        </block>
+      </view>
+      <view class="vertical">
+        <block wx:for="{{bookInfo}}" wx:key="index">
+          <text>{{book[item]}}</text>
+        </block>
+      </view>
+    </view>
+  </view>
+  <view class="post-container" hidden="{{posting}}">
+    <view bind:tap="onFakePost" class="post-fake">
+      <text>输入短评</text>
+    </view>
+    <view class="like-container">
+      <l-like bind:change="onLike" class="like" Like="{{!!LikeStatus.like_status}}" count="{{LikeStatus.fav_nums}}" />
+      <l-button open-type="share" class="share-btn">
+        <image class="share" slot="img" src="/pages/book/images/share.png"></image>
+      </l-button>
+    </view>
+  </view>
+  <l-mask wx:if="{{posting}}" bind:maskClick="onFakePost"/>
+  <view class="posting-container" wx:if="{{posting}}">
+    <view class="post-header">
+      <text wx:if="{{comments.length}}">仅可点击标签+1</text>
+      <text wx:else>暂无短评</text>
+      <text bind:tap="onFakePost" class="cancel">取消</text>
+    </view>
+    <view class="comment-container">
+      <block wx:for="{{util.limit(comments,3)}}" wx:key="index">
+        <l-tag tag-class="{{tool.highlight(index)}}" text="{{item.content}}" bind:tapping="tabClick">
+          <text class="num" slot="after">{{'+'+item.nums}}</text>
+        </l-tag>
+      </block>
+    </view>
+    <input bindconfirm="tabClick" class="post" placeholder='短评最多12个字'></input>
+  </view>
+</view>
+
+<wxs module="tool">
+  function highlight(index) {
+    if (index == 0) {
+      return 'ex-tag1'
+    } else if (index == 1) {
+      return 'ex-tag2'
+    }
+  }
+  module.exports = {
+    highlight: highlight
+  }
+</wxs>

@@ -1,0 +1,7 @@
+<!--components/like/index.wxml-->
+<view class="like_box" bindtap="likeClick">
+  <view class="like {{Like? 'active':''}}"></view>
+  <view class="count">
+    {{count}}
+  </view>
+</view>

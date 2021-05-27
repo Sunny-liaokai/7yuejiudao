@@ -1,0 +1,34 @@
+/* components/classic/epsoide/index.wxss */
+.container{
+  display: flex;
+  align-items:flex-end;
+}
+.NoTags{
+  font-size: 35rpx;
+  margin-right: 5rpx;
+}
+.line{
+  height: 59rpx;
+  width: 6rpx;
+  margin: 0 6rpx;
+  margin-bottom: 7rpx;
+  background-color: #000;
+}
+.frequencyOfPublication{
+  font-size: 75rpx;
+  line-height: 70rpx;
+  font-weight: 700;
+}
+.month_box{
+  display: flex;
+  flex-direction: column;
+  margin-left: 8rpx;
+}
+.month{
+  font-size: 29rpx;
+  text-align: left;
+}
+.year{
+  text-align: left;
+  font-size: 24rpx;
+}

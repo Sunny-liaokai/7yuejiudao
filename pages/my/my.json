@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "l-button": "/components/button/index",
+    "l-preview": "/components/preview/index",
+    "l-like": "/components/like/index"
+  }
+}

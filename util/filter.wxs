@@ -1,0 +1,15 @@
+var format=function(str){
+  if(!str)return
+  //匹配双斜杠
+  var reg=getRegExp('\\\\n','g')
+  return str.replace(reg,'\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;')
+}
+var limit=function(arr,length){
+  if(!arr||!arr.length)return
+  //slice截取数组 从那个位置开始到那个位置
+  return arr.slice(0,length)
+}
+module.exports={
+  format:format,
+  limit:limit
+}

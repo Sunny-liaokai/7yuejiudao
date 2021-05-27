@@ -1,0 +1,11 @@
+var month = ['一月','二月','三月','四月','五月','六月','七月','八月','九月','十月','十一月','十二月']
+var months = function (index) {
+  return month[index];
+}
+var formData = function (val) {
+  return val < 10 ? '0' + val : val;
+}
+module.exports = {
+  months:months,
+  formData:formData
+};

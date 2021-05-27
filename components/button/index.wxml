@@ -1,0 +1,4 @@
+<!--plain是否按钮背景透明-->
+<button class="container" open-type="{{openType}}" bindtap="onGetUserInfo"  plain="{{true}}">
+    <slot name="img"></slot>
+</button>

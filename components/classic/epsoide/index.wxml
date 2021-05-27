@@ -1,0 +1,11 @@
+<!--components/classic/epsoide/index.wxml-->
+<wxs src="./js/index.wxs" module="filter"></wxs>
+<view class="container">
+  <text class="NoTags">No.</text>
+  <text class="frequencyOfPublication">{{filter.formData(index)}}</text>
+  <text class="line"></text>
+  <view class="month_box">
+    <text class="month">{{filter.months(month)}}</text>
+    <text class="year">{{year}}</text>
+  </view>
+</view>

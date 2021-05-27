@@ -1,0 +1,32 @@
+// components/book/book.js
+Component({
+  /**
+   * 组件的属性列表
+   */
+  properties: {
+    book: {
+      type: Object
+    },
+    showLike:{
+        type:Boolean,
+        value:true
+      }
+  },
+
+  /**
+   * 组件的初始数据
+   */
+  data: {
+
+  },
+
+  /**
+   * 组件的方法列表
+   */
+  methods: {
+    onTap(){
+      let {id}=this.properties.book
+      this.triggerEvent('changeBookId',{id},{})
+    }
+  }
+})
